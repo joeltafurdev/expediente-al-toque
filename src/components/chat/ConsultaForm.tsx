@@ -38,7 +38,7 @@ export function ConsultaForm({
           placeholder="Ej: 2026-0010582"
           value={expediente}
           onChange={(e) => setExpediente(e.target.value)}
-          className="w-full rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
+          className="w-full max-w-xs rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
         />
         <span className="flex items-center gap-1 text-sm text-on-surface-variant">
           <Info className="h-4 w-4" aria-hidden />
@@ -64,7 +64,7 @@ export function ConsultaForm({
           placeholder="••••"
           value={clave}
           onChange={(e) => setClave(e.target.value)}
-          className="w-full max-w-[200px] rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg tracking-widest text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
+          className="w-full max-w-xs rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg tracking-widest text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
         />
         <span className="flex items-center gap-1 text-sm text-on-surface-variant">
           <Lock className="h-4 w-4" aria-hidden />
@@ -75,7 +75,7 @@ export function ConsultaForm({
       <button
         type="submit"
         disabled={loading}
-        className="flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-on-secondary shadow-sm transition-colors hover:bg-on-secondary-container focus:outline-none focus:ring-4 focus:ring-secondary/30 disabled:opacity-50 md:w-auto md:self-end"
+        className="flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-on-secondary shadow-sm transition-colors hover:bg-on-secondary-container focus:outline-none focus:ring-4 focus:ring-secondary/30 disabled:opacity-50 md:w-auto md:self-start"
       >
         {loading ? (
           <>
