@@ -21,55 +21,57 @@ export function ConsultaForm({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="expediente"
-          className="text-base font-semibold text-on-surface"
-        >
-          Número de expediente
-        </label>
-        <input
-          id="expediente"
-          name="expediente"
-          type="text"
-          inputMode="text"
-          autoComplete="off"
-          required
-          placeholder="Ej: 2026-0010582"
-          value={expediente}
-          onChange={(e) => setExpediente(e.target.value)}
-          className="w-full max-w-xs rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
-        />
-        <span className="flex items-center gap-1 text-sm text-on-surface-variant">
-          <Info className="h-4 w-4" aria-hidden />
-          Ejemplo: 2026-0010582 (12 caracteres)
-        </span>
-      </div>
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-4">
+        <div className="flex flex-col gap-2 sm:flex-1">
+          <label
+            htmlFor="expediente"
+            className="text-base font-semibold text-on-surface"
+          >
+            Número de expediente
+          </label>
+          <input
+            id="expediente"
+            name="expediente"
+            type="text"
+            inputMode="text"
+            autoComplete="off"
+            required
+            placeholder="Ej: 2026-0010582"
+            value={expediente}
+            onChange={(e) => setExpediente(e.target.value)}
+            className="w-full rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
+          />
+          <span className="flex items-center gap-1 text-sm text-on-surface-variant">
+            <Info className="h-4 w-4 shrink-0" aria-hidden />
+            Ejemplo: 2026-0010582 (12 caracteres)
+          </span>
+        </div>
 
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="clave"
-          className="text-base font-semibold text-on-surface"
-        >
-          Clave de acceso
-        </label>
-        <input
-          id="clave"
-          name="clave"
-          type="password"
-          inputMode="numeric"
-          autoComplete="off"
-          maxLength={4}
-          required
-          placeholder="••••"
-          value={clave}
-          onChange={(e) => setClave(e.target.value)}
-          className="w-full max-w-xs rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg tracking-widest text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
-        />
-        <span className="flex items-center gap-1 text-sm text-on-surface-variant">
-          <Lock className="h-4 w-4" aria-hidden />
-          Ingresá los 4 dígitos
-        </span>
+        <div className="flex flex-col gap-2 sm:w-44">
+          <label
+            htmlFor="clave"
+            className="text-base font-semibold text-on-surface"
+          >
+            Clave de acceso
+          </label>
+          <input
+            id="clave"
+            name="clave"
+            type="password"
+            inputMode="numeric"
+            autoComplete="off"
+            maxLength={4}
+            required
+            placeholder="••••"
+            value={clave}
+            onChange={(e) => setClave(e.target.value)}
+            className="w-full rounded-lg border-2 border-outline-variant bg-surface px-4 py-3 text-lg tracking-widest text-on-surface placeholder:text-outline focus:border-secondary focus:outline-none"
+          />
+          <span className="flex items-center gap-1 text-sm text-on-surface-variant">
+            <Lock className="h-4 w-4 shrink-0" aria-hidden />
+            Ingresá los 4 dígitos
+          </span>
+        </div>
       </div>
 
       <button
