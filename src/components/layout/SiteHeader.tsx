@@ -1,6 +1,7 @@
 "use client";
 
-import { Accessibility, ArrowLeft, CircleHelp, Landmark } from "lucide-react";
+import { Accessibility, ArrowLeft, CircleHelp } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   applyFontScale,
@@ -38,9 +39,18 @@ export function SiteHeader({ onBack }: { onBack?: () => void }) {
                 <ArrowLeft className="h-6 w-6" aria-hidden />
               </button>
             ) : (
-              <Landmark className="h-7 w-7 text-primary" aria-hidden />
+              <Image
+                src="/Despacho.png"
+                alt="Despacho Presidencial"
+                width={2142}
+                height={470}
+                priority
+                className="h-9 w-auto"
+              />
             )}
-            <span className="text-xl font-bold text-primary">
+            <span
+              className={`text-xl font-bold text-primary ${onBack ? "" : "hidden sm:inline"}`}
+            >
               Expediente al Toque
             </span>
           </div>
