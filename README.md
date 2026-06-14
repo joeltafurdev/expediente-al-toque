@@ -79,6 +79,8 @@ Toda la integración está aislada en un único adapter. Para pasar a la API rea
 
 No se modifica nada del dominio ni de la UI.
 
+> **Guía completa de integración en producción + requerimientos funcionales del API:** [`INTEGRACION-PRODUCCION.md`](./INTEGRACION-PRODUCCION.md)
+
 ### Datos de prueba
 
 Provistos por la entidad. Los nombres reales se omiten (minimización de datos).
