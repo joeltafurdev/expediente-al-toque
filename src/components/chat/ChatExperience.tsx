@@ -12,6 +12,7 @@ import { InfoBanner } from "@/components/notifications/InfoBanner";
 import { AlertSubscription } from "@/components/notifications/AlertSubscription";
 import { AvisoConfirmado } from "@/components/notifications/AvisoConfirmado";
 import { Comprobante } from "@/components/notifications/Comprobante";
+import { AsesorModal } from "@/components/support/AsesorModal";
 import { ConsultaForm } from "./ConsultaForm";
 
 type Vista = "inicio" | "estado" | "aviso" | "comprobante";
@@ -46,6 +47,7 @@ export function ChatExperience() {
   const [errorTexto, setErrorTexto] = useState<string | null>(null);
   const [expediente, setExpediente] = useState("");
   const [telMasked, setTelMasked] = useState("");
+  const [modalAsesor, setModalAsesor] = useState(false);
   const [datosAlerta, setDatosAlerta] = useState<{
     fecha: string;
     hora: string;
@@ -179,6 +181,7 @@ export function ChatExperience() {
             </p>
             <button
               type="button"
+              onClick={() => setModalAsesor(true)}
               className="flex min-h-[56px] items-center justify-center gap-2 rounded-lg border border-outline-variant bg-surface-container-high px-6 py-3 font-semibold text-on-surface transition-colors hover:bg-surface-variant"
             >
               <Headset className="h-5 w-5" aria-hidden />
@@ -186,6 +189,12 @@ export function ChatExperience() {
             </button>
           </section>
         </main>
+        {modalAsesor && (
+          <AsesorModal
+            expediente={expediente}
+            onClose={() => setModalAsesor(false)}
+          />
+        )}
       </>
     );
   }
