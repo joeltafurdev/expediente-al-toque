@@ -2,7 +2,12 @@
 
 import { Accessibility, ArrowLeft, CircleHelp, Landmark } from "lucide-react";
 import { useEffect, useState } from "react";
-import { applyFontScale, readFontScale } from "@/lib/accessibility";
+import {
+  applyFontScale,
+  applyTheme,
+  readFontScale,
+  readTheme,
+} from "@/lib/accessibility";
 import { HelpModal } from "@/components/support/HelpModal";
 import { AccessibilityPanel } from "@/components/support/AccessibilityPanel";
 
@@ -12,9 +17,10 @@ type Panel = "none" | "ayuda" | "accesibilidad";
 export function SiteHeader({ onBack }: { onBack?: () => void }) {
   const [panel, setPanel] = useState<Panel>("none");
 
-  // Restaura el tamaño de texto guardado al cargar la página.
+  // Restaura las preferencias guardadas (tamaño de texto y tema) al cargar.
   useEffect(() => {
     applyFontScale(readFontScale());
+    applyTheme(readTheme());
   }, []);
 
   return (

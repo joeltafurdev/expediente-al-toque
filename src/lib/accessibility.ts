@@ -28,3 +28,32 @@ export function readFontScale(): FontScale {
   }
   return "normal";
 }
+
+export type Theme = "claro" | "oscuro" | "daltonico";
+
+const THEME_KEY = "eat-theme";
+
+/** Aplica el tema (override de variables CSS vía data-theme en <html>). */
+export function applyTheme(theme: Theme): void {
+  if (theme === "claro") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch {
+    // ignorar
+  }
+}
+
+/** Lee el tema guardado en el dispositivo. */
+export function readTheme(): Theme {
+  try {
+    const v = localStorage.getItem(THEME_KEY);
+    if (v === "claro" || v === "oscuro" || v === "daltonico") return v;
+  } catch {
+    // ignorar
+  }
+  return "claro";
+}
