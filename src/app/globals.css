@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*
+ * Design system del prototipo (Stitch) — "Civic Assistance System".
+ * Institucional: navy (autoridad), teal (acción), gold (destaque). WCAG AAA.
+ */
+@theme {
+  --color-background: #f8f9fa;
+  --color-on-background: #191c1d;
+  --color-surface: #f8f9fa;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #43474f;
+  --color-surface-variant: #e1e3e4;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-outline: #737780;
+  --color-outline-variant: #c3c6d1;
+
+  --color-primary: #001e40;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #003366;
+  --color-on-primary-container: #799dd6;
+  --color-primary-fixed: #d5e3ff;
+  --color-primary-fixed-dim: #a7c8ff;
+  --color-on-primary-fixed: #001b3c;
+  --color-on-primary-fixed-variant: #1f477b;
+
+  --color-secondary: #006a6a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #90efef;
+  --color-on-secondary-container: #006e6e;
+  --color-secondary-fixed: #93f2f2;
+  --color-on-secondary-fixed-variant: #004f4f;
+
+  --color-tertiary: #735c00;
+  --color-tertiary-container: #cca830;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --font-sans: var(--font-public-sans), system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+  font-size: 1.125rem; /* 18px base: legible para adultos mayores */
+  line-height: 1.6;
+}
+
+/* Sombras ambientales: efecto "flotante" suave (DESIGN.md §Elevación). */
+.card-ambient-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.card-ambient-shadow:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.assistant-border {
+  border-left: 6px solid var(--color-primary);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 106, 106, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 106, 106, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 106, 106, 0);
+  }
+}
+.timeline-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Impresión: fondo blanco limpio para el comprobante. */
+@media print {
+  body {
+    background: #ffffff;
+  }
+}
+
+/* Accesibilidad: respeta la preferencia de movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
