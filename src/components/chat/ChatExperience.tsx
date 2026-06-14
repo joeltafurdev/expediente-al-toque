@@ -120,6 +120,7 @@ export function ChatExperience() {
           <AvisoConfirmado
             expediente={expediente}
             telMasked={telMasked}
+            estado={resultado.estado}
             onDescargar={() => setVista("comprobante")}
             onVolver={() => setVista("inicio")}
           />

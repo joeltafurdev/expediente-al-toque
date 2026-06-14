@@ -5,7 +5,7 @@
 > Entidad proponente: Despacho Presidencial — Lab OGTIC DP
 > Estado: Borrador v1 · Día 2 (13-jun-2026) · Entrega: 14-jun-2026 vía Facilita Perú
 >
-> ⚠️ **Nombre provisional.** "Expediente al Toque" es un nombre de trabajo; confirmar antes de la entrega.
+> **Equipo:** GEARJOEDEV · **Nombre del proyecto (confirmado):** Expediente al Toque.
 
 ---
 

@@ -98,6 +98,7 @@ Provistos por la entidad. Los nombres reales se omiten (minimización de datos).
 - **Sin datos personales reales.** Solo datos de prueba provistos por la entidad.
 - **Notificaciones simuladas.** El número de celular se enmascara y **no se envía a ningún servicio ni se almacena** (solo vive en el navegador). En producción requeriría consentimiento y cumplir la **Ley N° 29733** (Protección de Datos Personales).
 - **Sin geolocalización por IP.** Cualquier métrica futura usaría datos agregados y anonimizados.
+- **Uso de IA generativa declarado.** Ver [`DECLARACION-IA-GENERATIVA.md`](./DECLARACION-IA-GENERATIVA.md) (conforme a las Bases §17).
 
 ## Reutilización (Software Público)
 
